@@ -33,14 +33,22 @@ namespace WindowsFormsApp1.Models
         #region methodes
         public void ajoutIntervention(Intervention uneIntervention)
         {
-            lesInterventions.Add(uneIntervention);
+            lesInterventions.Add(uneIntervention);// Ajoute une intervention
         }
         public void AffecteInterventionUrgente(Intervention uneIntervention)
-        {
-            lesInterventions.Insert(1, uneIntervention);
+        {// Affecte une intervention à une intervention Urgente
+            int i = 0;
+            foreach (Intervention uneInter in lesInterventions)
+            {
+                if (uneInter.Statut == "E")
+                {
+                    i = lesInterventions.IndexOf(uneInter);
+                }
+            }
+            lesInterventions.Insert(i, uneIntervention);
         }
         public List<Intervention> InterventionRestante()
-        {
+        {// Permet de savoir les interventions qui restent à effectuer
             List<Intervention> lesInterventionsRestantes = new List<Intervention>();
             foreach (Intervention uneInter in lesInterventions)
             {
@@ -52,14 +60,22 @@ namespace WindowsFormsApp1.Models
             return lesInterventionsRestantes;
         }
         public Intervention InterventionCours()
-        {
-            return lesInterventions[1];
+        {// Permet de  savoir les interventions qui sont en cours
+            foreach (Intervention uneInter in lesInterventions)
+            {
+                if (uneInter.Statut == "E")
+                {
+                    return uneInter;
+                    break;
+                }
+            }
         }
 
         public Intervention GetIntervention(int i)
-        {
+        {// Donne l'intervnetion avec la position correpsondante à I dans la liste lesInterventions
             return lesInterventions[i];
         }
         #endregion
+
     }
 }

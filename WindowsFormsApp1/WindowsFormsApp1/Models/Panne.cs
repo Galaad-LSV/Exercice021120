@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.Models
 		#region Méthodes
 		public void AjouteInterventionUrgente(int dureePrevue, string description)
 		{
-			TourneePlusProche(this).AffecteInterventionUrgent(new Intervention(dureePrevue, description, this));
+			TourneePlusProche(this)/*Affecte cette intervention où l'intervention la plus proche du lampadaire est en panne */.AffecteInterventionUrgent(new Intervention(dureePrevue, description, this));// Création d'une intervention et on affecte l'intervention 
 		}
 
 		#endregion
