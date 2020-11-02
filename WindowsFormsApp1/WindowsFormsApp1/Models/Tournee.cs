@@ -60,16 +60,19 @@ namespace WindowsFormsApp1.Models
             return lesInterventionsRestantes;
         }
         public Intervention InterventionCours()
-        {// Permet de  savoir les interventions qui sont en cours
+        {
+            Intervention enCours;
             foreach (Intervention uneInter in lesInterventions)
             {
                 if (uneInter.Statut == "E")
                 {
-                    return uneInter;
+                    enCours = uneInter;
                     break;
                 }
             }
+            return enCours;
         }
+
 
         public Intervention GetIntervention(int i)
         {// Donne l'intervnetion avec la position correpsondante à I dans la liste lesInterventions

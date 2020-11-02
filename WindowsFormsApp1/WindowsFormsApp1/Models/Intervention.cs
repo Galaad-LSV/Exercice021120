@@ -39,6 +39,10 @@ namespace WindowsFormsApp1.Models
             this._statut = "N";
             _collInterventions.Add(this);
         }
+        public Intervention()
+        {
+
+        }
         #endregion
 
         #region getters/setters
