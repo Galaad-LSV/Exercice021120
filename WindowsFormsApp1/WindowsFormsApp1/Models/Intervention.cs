@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Models
 {
-    class Intervention
+    public class Intervention
     {
         #region attributs
         private static List<Intervention> _collInterventions = new List<Intervention>();

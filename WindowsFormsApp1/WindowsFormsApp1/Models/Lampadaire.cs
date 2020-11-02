@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Models
 {
-    class Lampadaire
+    public class Lampadaire
     {
 		#region Attributs
 		private static List<Lampadaire> CollClassLampadaire = new List<Lampadaire>();

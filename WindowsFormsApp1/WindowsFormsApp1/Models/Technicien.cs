@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Models
 {
-    class Technicien
+    public class Technicien
     {
         #region attributs
         private static List<Technicien> CollClassStation = new List<Technicien>();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Models
 {
-    class Tournee
+    public class Tournee
     {
         #region attributs
         public static List<Tournee> CollLesTournees = new List<Tournee>();
@@ -41,10 +41,10 @@ namespace WindowsFormsApp1.Models
         }
         public List<Intervention> InterventionRestante()
         {
-            List<Intervention> lesInterventionsRestantes = new List<Intervention>;
+            List<Intervention> lesInterventionsRestantes = new List<Intervention>();
             foreach (Intervention uneInter in lesInterventions)
             {
-                if (uneInter.statut = "A")
+                if (uneInter.Statut == "A")
                 {
                     lesInterventionsRestantes.Add(uneInter);
                 }
@@ -56,7 +56,7 @@ namespace WindowsFormsApp1.Models
             return lesInterventions[1];
         }
 
-        public Intervention GetIntervention(i)
+        public Intervention GetIntervention(int i)
         {
             return lesInterventions[i];
         }

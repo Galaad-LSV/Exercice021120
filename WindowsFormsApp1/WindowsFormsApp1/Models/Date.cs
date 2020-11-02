@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Models
 {
-    class Date
+    public class Date
     {
         #region Attribut
         public static string date = DateTime.Now.ToString("dd/MM/yyyy HH:mm"); //Date sous forme 00/00/0000 00:00
