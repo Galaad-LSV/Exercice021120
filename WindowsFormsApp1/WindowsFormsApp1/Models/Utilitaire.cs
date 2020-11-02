@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Device.Location;
 
-
-namespace WindowsFormsApp1.Models
+namespace lun02nov
 {
     public abstract class Utilitaire
     {
+
         #region methodes
         public static List<Tournee> TourneesEnCours()
         {
             List<Tournee> TourneesEnCours = new List<Tournee>();
 
-            foreach (Tournee uneTournee in Tournee.CollLesTournees)
+            foreach(Tournee uneTournee in Tournee.CollLesTournees)
             {
-                foreach (Intervention uneIntervention in uneTournee.LesInterventions)
+                foreach(Intervention uneIntervention in uneTournee.LesInterventions)
                 {
                     if (uneTournee.DateHeureDebut <= DateTime.Now && uneIntervention.Statut == "E")
                     {
@@ -34,9 +35,23 @@ namespace WindowsFormsApp1.Models
             return res;
         }
 
-        public static Tournee TourneePlusProche()
+        public static Tournee TourneePlusProche(Panne unePanne)
         {
+            int distance = Int32.MaxValue;
+            Tournee maTournee;
 
+            foreach (Tournee uneTournee in Tournee.CollLesTournees)
+            {
+                foreach (Intervention uneIntervention in uneTournee.LesInterventions)
+                {
+                   if ( distance >= DistanceDeuxLampadaire(uneIntervention.LaPanne.LeLampadaire, unePanne.LeLampadaire))
+                   {
+                        distance = DistanceDeuxLampadaire(uneIntervention.LaPanne.LeLampadaire, unePanne.LeLampadaire);
+                        maTournee = uneTournee;
+                   }
+                }
+            }
+            return maTournee;
         }
 
         //public static int NouvelIdPanne()
@@ -44,6 +59,5 @@ namespace WindowsFormsApp1.Models
 
         //}
         #endregion
-
     }
 }
