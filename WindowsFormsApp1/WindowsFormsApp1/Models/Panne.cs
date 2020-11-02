@@ -39,11 +39,11 @@ namespace WindowsFormsApp1.Models
 		#endregion
 
 		#region Méthodes
-		public void AjouteInterventionUrgente()
+		public void AjouteInterventionUrgente(int dureePrevue, string description)
 		{
-			Intervention uneIntervention = new Intervention(,, this);
-			TourneePlusProche(this).AffecteInterventionUrgent(uneIntervention);
+			TourneePlusProche(this).AffecteInterventionUrgent(new Intervention(dureePrevue, description, this));
 		}
+
 		#endregion
 	}
 }
