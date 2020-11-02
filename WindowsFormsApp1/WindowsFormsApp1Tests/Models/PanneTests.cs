@@ -12,10 +12,17 @@ namespace WindowsFormsApp1.Models.Tests
     public class PanneTests
     {
         [TestMethod()]
-        public void  ()
+        public void ()
         {
             Assert.Fail();
-            
+[TestMethod()]
+        public void AjouteInterventionUrgenteTest()
+        {
+        private bool _urgent;
+        private Lampadaire _leLampadaire;
+        private List<Intervention> _lesIntervention;
+        _id=1;
+        _statut= "N";
         }
     }
 }

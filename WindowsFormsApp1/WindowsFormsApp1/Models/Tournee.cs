@@ -60,7 +60,7 @@ namespace WindowsFormsApp1.Models
             return lesInterventionsRestantes;
         }
         public Intervention InterventionCours()
-        {
+        {//nous donnes l'intervention qui est en cours
             Intervention enCours;
             foreach (Intervention uneInter in lesInterventions)
             {
